@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Paracetamol",
+    "genNo":"pc2",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "15 Tablat",
+    "generic_name":"",
+    "price": "25 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Calpol",
+    "genNo":"pc2",
+
+    "alternate": [
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "10 Tablat",
+    "price": "30 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Dolo",
+    "genNo":"pc2",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "10 Tablat",
+    "price": "35 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Paracip",
+    "genNo":"pc2",
+    "alternate": [
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "8 Tablat",
+    "price": "10 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Pacimol",
+    "genNo":"pc2",
+    "alternate": [
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "25 Tablat",
+    "price": "20 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Babymol",
+    "genNo":"pc2",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "10 Tablat",
+    "price": "23 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Algina",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "20 Tablat",
+    "price": "33 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Algina",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "5 Tablat",
+    "price": "36 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Flumol",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "25 Tablat",
+    "price": "18 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  },
+  {
+    "name": "Paracad",
+    "alternate": [
+      "Paracetamol",
+      "Calpol",
+      "Dolo",
+      "Paracip ",
+      "Pacimol ",
+      "Babymol ",
+      "Algina ",
+      "Flumol ",
+      "Paracad"
+    ],
+    "quantity": "15 Tablat",
+    "price": "20 Rs.",
+    "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
+    "Imprint": "M366",
+    "color": "Red",
+    "shape": "Round",
+    "image": "./img/medicine.jpg"
+  }
+  
+]

@@ -1,0 +1,58 @@
+{
+  "diseases": [
+    {
+      "name": "Common Cold",
+      "symptoms": ["Runny nose", "Sneezing", "Cough", "Sore throat"],
+      "precautions": ["Wash hands frequently", "Cover mouth while coughing/sneezing", "Avoid close contact with infected individuals"],
+      "medicine": ["Acetaminophen", "Ibuprofen"]
+    },
+    {
+      "name": "Influenza",
+      "symptoms": ["Fever", "Headache", "Muscle aches", "Fatigue"],
+      "precautions": ["Get vaccinated", "Wash hands regularly", "Cover mouth while coughing/sneezing"],
+      "medicine": ["Oseltamivir", "Zanamivir"]
+    },
+    {
+      "name": "COVID",
+      "symptoms": ["Fever", "Cough", "Shortness of breath", "Loss of taste or smell"],
+      "precautions": ["Wear a mask", "Practice social distancing", "Follow hygiene practices"],
+      "medicine": ["Remdesivir", "Dexamethasone"]
+    },
+    {
+      "name": "Migraine",
+      "symptoms": ["Severe headache", "Nausea", "Sensitivity to light and sound"],
+      "precautions": ["Identify triggers", "Manage stress", "Get enough sleep"],
+      "medicine": ["Sumatriptan", "Ibuprofen"]
+    },
+    {
+      "name": "Asthma",
+      "symptoms": ["Shortness of breath", "Chest tightness", "Wheezing", "Coughing"],
+      "precautions": ["Avoid triggers", "Keep rescue inhaler handy", "Follow asthma action plan"],
+      "medicine": ["Albuterol", "Inhaled corticosteroids"]
+    },
+    {
+      "name": "Diabetes",
+      "symptoms": ["Frequent urination", "Increased thirst", "Fatigue", "Blurred vision"],
+      "precautions": ["Monitor blood sugar levels", "Eat a balanced diet", "Exercise regularly"],
+      "medicine": ["Insulin", "Metformin"]
+    },
+    {
+      "name": "Hypertension",
+      "symptoms": ["High blood pressure", "Headaches", "Chest pain", "Dizziness"],
+      "precautions": ["Maintain a healthy weight", "Reduce sodium intake", "Exercise regularly"],
+      "medicine": ["Lisinopril", "Amlodipine"]
+    },
+    {
+      "name": "Allergies",
+      "symptoms": ["Sneezing", "Itchy eyes", "Runny nose", "Rashes"],
+      "precautions": ["Avoid triggers", "Keep windows closed", "Use air purifiers"],
+      "medicine": ["Antihistamines", "Nasal sprays"]
+    },
+    {
+      "name": "Gastroenteritis",
+      "symptoms": ["Nausea", "Vomiting", "Diarrhea", "Abdominal pain"],
+      "precautions": ["Stay hydrated", "Practice good hygiene", "Avoid contaminated food"],
+      "medicine": ["Oral rehydration solutions", "Antidiarrheal medications"]
+    }
+  ]
+}

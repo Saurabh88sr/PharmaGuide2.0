@@ -1,0 +1,41 @@
+[33mcommit 43c20095a7d0c6bc89769bc398a0db55d6feb97f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Mon Apr 17 22:39:41 2023 +0530
+
+    Frequently asked question page added
+
+[33mcommit bca7d2fd90c0e947659d9c152c6cb23378f37142[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Sat Apr 15 15:09:26 2023 +0530
+
+    Icon Added
+
+[33mcommit d5195351920a13241664db4e076b3e109b2a9277[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Thu Apr 13 00:25:10 2023 +0530
+
+    login and signup added
+
+[33mcommit 8947a6dcd147ec487b590b72b8d8ff4ee9e113bb[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Sun Apr 9 18:03:08 2023 +0530
+
+    router added
+
+[33mcommit 446b138816daf1ea9001a4d02614120c9323c5c3[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Wed Apr 5 17:26:41 2023 +0530
+
+    home page- header, searchBar, Component, News, Footer
+
+[33mcommit eb4453d2b21fa9e6670826016069ddca80c166cd[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Mon Apr 3 00:17:38 2023 +0530
+
+    frist commit
+
+[33mcommit 29349412e4ab8e256a1e2a1edec93a18dcbf8428[m
+Author: saurabhV <saurabh888vns@gmail.com>
+Date:   Sun Apr 2 15:31:47 2023 +0530
+
+    Initialize project using Create React App
