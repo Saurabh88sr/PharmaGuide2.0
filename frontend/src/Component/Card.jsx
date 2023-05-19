@@ -5,13 +5,11 @@ const Card = (props) => {
     //testing added
     <div className="card-box  ">
       <div className="card-icon cardcolor ">
-      <img src={props.src}  alt={props.alt} />
-        	  <div className="text">
-            <h4>{props.feature}</h4>
-            <textarea name="faslkd" id="" cols="30" rows="10">sdkf;askdjf</textarea>
-
-              	  </div>
-  </div>
+        <img src={props.src} alt={props.alt} />
+        <div className="text">
+          <h4>{props.feature}</h4>
+        </div>
+      </div>
     </div>
   );
 };

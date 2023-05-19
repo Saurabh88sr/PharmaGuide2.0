@@ -12,8 +12,7 @@
       "Algina ",
       "Flumol ",
       "Paracad"
-      "Paracad",
-    ],
+        ],
     "quantity": "15 Tablat",
     "generic_name":"",
     "price": "25 Rs.",
@@ -21,7 +20,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://en.wikipedia.org/wiki/Paracetamol",
+    "isSaved": true
   },
   {
     "name": "Calpol",
@@ -43,7 +44,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://en.wikipedia.org/wiki/Paracetamol",
+    "isSaved": true
   },
   {
     "name": "Dolo",
@@ -65,7 +68,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Paracip",
@@ -86,7 +91,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Pacimol",
@@ -107,7 +114,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Babymol",
@@ -129,7 +138,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Algina",
@@ -150,7 +161,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Algina",
@@ -171,35 +184,35 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Flumol",
     "alternate": [
-      "Paracetamol",
       "Calpol",
       "Dolo",
       "Paracip ",
       "Pacimol ",
       "Babymol ",
       "Algina ",
-      "Flumol ",
-      "Paracad"
-    ],
+      "Flumol "    ],
     "quantity": "25 Tablat",
     "price": "18 Rs.",
     "Dosage_forms": "oral capsule (200 mg), oral suspension (100 mg/5 mL; 50 mg/1.25 mL)",
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true
   },
   {
     "name": "Paracad",
     "alternate": [
       "Paracetamol",
       "Calpol",
-      "Dolo",
       "Paracip ",
       "Pacimol ",
       "Babymol ",
@@ -213,7 +226,9 @@
     "Imprint": "M366",
     "color": "Red",
     "shape": "Round",
-    "image": "./img/medicine.jpg"
+    "image": "./img/medicine.jpg",
+    "newsurl": "https://example.com/medicine1",
+    "isSaved": true 
   }
   
 ]

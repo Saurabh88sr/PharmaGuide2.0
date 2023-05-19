@@ -24,7 +24,7 @@ const LoginPage = () => {
     if (user) {
       setLoginError(false);
       // Redirect to home page
-      history.push("/home");
+      history.push("/");
     } else {
       setLoginError(true);
     }

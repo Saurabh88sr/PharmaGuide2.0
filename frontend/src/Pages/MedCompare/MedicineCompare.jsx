@@ -6,14 +6,12 @@ import DrugTable from "../Identifier/DrugTable";
 import medicineData from "../medicineData.json";
 import MedCardInfo from "./MedCardInfo";
 
-
 function MedicineCompare() {
   const [data, setData] = useState([]);
   const [genrData, setGenrData] = useState([]);
   const [drugName, setDrugName] = useState("advil");
   const [genrName, setGenrName] = useState("Dolo");
   const [matchedMedicines, setMatchedMedicines] = useState([]);
-
 
   const [messages, setMessages] = useState([]);
   // const [showRules, setShowRules] = useState(false);
@@ -26,6 +24,20 @@ function MedicineCompare() {
 
     setMessages([...messages, message]);
     setDrugName("");
+    const filteredMedicines = medicineData.filter((medicine) => {
+      const foundAlternate = medicine.alternate.find(
+        (alternateName) =>
+          alternateName.toLowerCase() === drugName.toLowerCase()
+      );
+      return !!foundAlternate;
+    });
+
+    if (filteredMedicines.length > 0) {
+      setMatchedMedicines(filteredMedicines);
+    } else {
+      setMatchedMedicines([]);
+    }
+
     const options = {
       method: "GET",
       url: "https://drug-info-and-price-history.p.rapidapi.com/1/druginfo",
@@ -41,16 +53,6 @@ function MedicineCompare() {
       setData(response.data);
     } catch (error) {
       console.error(error);
-    }
-    const filteredMedicines = medicineData.filter(
-      (medicine) => medicine.alternate[1] === drugName
-      
-    );
-  
-    if (filteredMedicines.length > 0) {
-      setMatchedMedicines(filteredMedicines);
-    } else {
-      setMatchedMedicines([]);
     }
   };
 
@@ -77,7 +79,6 @@ function MedicineCompare() {
     } catch (error) {
       console.error(error);
     }
-    
   };
 
   return (
@@ -113,11 +114,10 @@ function MedicineCompare() {
           </Form>
         </div>
         <ul>
-            {data.map((item, index) => (
-              <div key={index}>
-              </div>
-            ))}
-          </ul>
+          {data.map((item, index) => (
+            <div key={index}></div>
+          ))}
+        </ul>
         <div className="justify-content-md-center d-flex ">
           {data.map((item, index) => (
             <div key={index} className=" d-flex w-50">
@@ -160,19 +160,23 @@ function MedicineCompare() {
             ))
           }
         </div>
-  
       </div>
       <div className="container my-4">
-      <h1 className="headBg">Top Alternative</h1>
-     <div className="row">
-      {matchedMedicines.map((medicine)=>(
-        <div className="col-md-3 p-2">
-        <MedCardInfo name={medicine.name} price={medicine.price} generic_name={medicine.generic_name} Dosage_forms={medicine.Dosage_forms} quantity={medicine.quantity}/>          
-    </div>
-
-      ))}   
+        <h1 className="headBg">Top Alternative</h1>
+        <div className="row">
+          {matchedMedicines.map((medicine) => (
+            <div className="col-md-4 p-2">
+              <MedCardInfo
+                name={medicine.name}
+                price={medicine.price}
+                generic_name={medicine.generic_name}
+                Dosage_forms={medicine.Dosage_forms}
+                quantity={medicine.quantity}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
