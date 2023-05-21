@@ -1,5 +1,6 @@
 [
   {
+    "id":"01",
     "name": "Paracetamol",
     "genNo":"pc2",
     "alternate": [
@@ -21,10 +22,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://en.wikipedia.org/wiki/Paracetamol",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true
   },
   {
+    "id":"02",
     "name": "Calpol",
     "genNo":"pc2",
 
@@ -45,10 +47,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://en.wikipedia.org/wiki/Paracetamol",
+    "url": "https://en.wikipedia.org/?title=Calpol&redirect=no",
     "isSaved": true
   },
   {
+    "id":"03",
     "name": "Dolo",
     "genNo":"pc2",
     "alternate": [
@@ -69,10 +72,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true
   },
   {
+    "id":"04",
     "name": "Paracip",
     "genNo":"pc2",
     "alternate": [
@@ -92,10 +96,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true
   },
   {
+    "id":"005",
     "name": "Pacimol",
     "genNo":"pc2",
     "alternate": [
@@ -115,10 +120,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://www.lybrate.com/medicine/pacimol-500-mg-tablet",
     "isSaved": true
   },
   {
+    "id":"06",
     "name": "Babymol",
     "genNo":"pc2",
     "alternate": [
@@ -139,10 +145,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Babymetal",
     "isSaved": true
   },
   {
+    "id":"06",
     "name": "Algina",
     "alternate": [
       "Paracetamol",
@@ -162,10 +169,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true
   },
   {
+    "id":"07",
     "name": "Algina",
     "alternate": [
       "Paracetamol",
@@ -185,10 +193,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true
   },
   {
+    "id":"07",
     "name": "Flumol",
     "alternate": [
       "Calpol",
@@ -205,10 +214,11 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Flumpool",
     "isSaved": true
   },
   {
+    "id":"08",
     "name": "Paracad",
     "alternate": [
       "Paracetamol",
@@ -227,7 +237,7 @@
     "color": "Red",
     "shape": "Round",
     "image": "./img/medicine.jpg",
-    "newsurl": "https://example.com/medicine1",
+    "url": "https://en.wikipedia.org/wiki/Paracetamol",
     "isSaved": true 
   }
   

@@ -1,59 +1,19 @@
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
 
-
-const Medlist =()=>{
-    return(
-        <>
-        <Container>
-          <Row className="d-flex">
-            <Col>
-              <ul className="list-group">
-                <li className="list-group-item justify-content-between align-items-center">
-                  <div className="headBg"><h4>Medicine Name</h4> </div>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Generic Name
-                </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                 Price
-                </li>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse assumenda excepturi distinctio nemo aspernatur
-                    voluptate, illum aperiam maiores vitae iste nesciunt officia
-                    neque perspiciatis animi delectus praesentium ratione eaque
-                    fugiat.
-                  </p>
-                </li>
-                
-              </ul>
-            </Col>
-            <Col>
-              <ul className="list-group">
-                <li className="list-group-item justify-content-between align-items-center">
-                  <div className="headBg"><h4>Medicine Name</h4> </div>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Generic Name
-                </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                 Price
-                </li>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse assumenda excepturi distinctio nemo aspernatur
-                    voluptate, illum aperiam maiores vitae iste nesciunt officia
-                    neque perspiciatis animi delectus praesentium ratione eaque
-                    fugiat.
-                  </p>
-                </li>
-                
-              </ul>
-            </Col>
-          </Row>
-        </Container>
-        </>
-    );
-};
+const Medlist = ({ medicineItems, handleSave }) => (
+  <div>
+    <h2>All Medicines</h2>
+    {medicineItems.map((medicine) => (
+      <div key={medicine.name}>
+        <h3>{medicine.name}</h3>
+        <p>Quantity: {medicine.quantity}</p>
+        {/* Render other medicine details */}
+        <button onClick={() => handleSave(medicine.name)}>
+          {medicine.isSaved ? 'Unsave' : 'Save'}
+        </button>
+      </div>
+    ))}
+  </div>
+);
 
 export default Medlist;

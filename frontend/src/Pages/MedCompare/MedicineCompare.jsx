@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
 import DrugTable from "../Identifier/DrugTable";
-// import GenericTable from "./GenericTable";
 import medicineData from "../medicineData.json";
 import MedCardInfo from "./MedCardInfo";
+import Medlist from "../MyList/Medlist";
+import SavedMedicineList from "./SavedMedicineList";
+
+const savedMedicineKey = "savedMedicine";
 
 function MedicineCompare() {
   const [data, setData] = useState([]);
   const [genrData, setGenrData] = useState([]);
-  const [drugName, setDrugName] = useState("advil");
-  const [genrName, setGenrName] = useState("Dolo");
+  const [drugName, setDrugName] = useState("");
+  const [genrName, setGenrName] = useState("");
   const [matchedMedicines, setMatchedMedicines] = useState([]);
-
+  const [medicineItems, setMedicineItems] = useState([]);
+  const [savedMedicines, setSavedMedicines] = useState([]);
   const [messages, setMessages] = useState([]);
   // const [showRules, setShowRules] = useState(false);
+
+  useEffect(() => {
+    const savedMedicineData = getSavedMedicine();
+    setMedicineItems(savedMedicineData);
+    setSavedMedicines(savedMedicineData.filter((item) => item.isSaved));
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -80,6 +90,35 @@ function MedicineCompare() {
       console.error(error);
     }
   };
+  
+  const handleSave = (medicine) => {
+    const updatedMedicineItems = medicineItems.map((item) => {
+      if (item.id === medicine.id) {
+        return {
+          ...item,
+          isSaved: !item.isSaved,
+        };
+      }
+      return item;
+    });
+
+    setMedicineItems(updatedMedicineItems);
+    setSavedMedicines(updatedMedicineItems.filter((item) => item.isSaved));
+    saveMedicineData(updatedMedicineItems);
+  };
+
+  const saveMedicineData = (medicineData) => {
+    localStorage.setItem(savedMedicineKey, JSON.stringify(medicineData));
+  };
+
+  const getSavedMedicine = () => {
+    const savedMedicineData = localStorage.getItem(savedMedicineKey);
+    if (savedMedicineData) {
+      return JSON.parse(savedMedicineData);
+    }
+    return [];
+  };
+  
 
   return (
     <div>
@@ -167,15 +206,19 @@ function MedicineCompare() {
           {matchedMedicines.map((medicine) => (
             <div className="col-md-4 p-2">
               <MedCardInfo
+              id={medicine.id}
                 name={medicine.name}
                 price={medicine.price}
                 generic_name={medicine.generic_name}
                 Dosage_forms={medicine.Dosage_forms}
                 quantity={medicine.quantity}
+                newsurl={medicine.url}
               />
             </div>
           ))}
         </div>
+        <Medlist medicineItems={medicineItems} handleSave={handleSave} />
+      <SavedMedicineList savedMedicines={savedMedicines} />
       </div>
     </div>
   );
