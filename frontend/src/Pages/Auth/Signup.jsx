@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { Form, Alert, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import UserData from './UserData.json'; // Assuming you have a JSON file containing user data
+import { Form, Button, Alert, Modal } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import Axios from 'axios';
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPasswordError, setShowPasswordError] = useState(false);
-  const navigate = useNavigate();
+  const [signupStatus, setSignupStatus] = useState('');
+  const [showModal, setShowModal] = useState(false); // State for controlling the popup modal
+  const navigate = useNavigate(); // Create the navigate function for redirection
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -17,24 +19,33 @@ function Signup() {
       return;
     }
 
-    const newUser = {
-      email: email,
+    Axios.post('http://localhost:7000/register', {
+      username: email,
       password: password,
-    };
+    })
+      .then((response) => {
+        console.log(response);
 
-    // Simulating user data update by pushing the new user into the existing data
-    UserData.push(newUser);
+        if (response.data.success) {
+          setSignupStatus('Registration successful!');
+          setShowModal(true); // Show the popup modal
+          // Reset the form fields
+          setEmail('');
+          setPassword('');
+          setConfirmPassword('');
+        } else {
+          setSignupStatus('Registration failed. Please try again.');
+        }
+      })
+      .catch((error) => {
+        console.error('Registration error:', error);
+        setSignupStatus('Registration failed. Please try again.');
+      });
+  };
 
-    // Optional: You can stringify and save the updated user data to localStorage or send it to a backend server
-    localStorage.setItem('UserData', JSON.stringify(UserData));
-
-    // Reset form fields
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-
-    // Redirect to dashboard or login page
-    navigate('/login');
+  const handleCloseModal = () => {
+    setShowModal(false); // Hide the popup modal
+    navigate('/login'); // Redirect to the login page using navigate
   };
 
   return (
@@ -45,45 +56,51 @@ function Signup() {
           Passwords do not match.
         </Alert>
       )}
+      {signupStatus && (
+        <Alert variant="success" onClose={() => setSignupStatus('')} dismissible>
+          {signupStatus}
+        </Alert>
+      )}
       <Form onSubmit={handleSignup}>
         <Form.Group controlId="email" className="p-2">
           <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <Form.Text className="text-primary">We'll never share your email with anyone else.</Form.Text>
         </Form.Group>
 
         <Form.Group controlId="password" className="p-2">
           <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </Form.Group>
 
         <Form.Group controlId="confirm-password" className="p-2">
           <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
+          <Form.Control type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
         </Form.Group>
 
         <Button variant="dark mt-3" type="submit">
           Signup
         </Button>
       </Form>
+      <div className="mt-4 p-1">
+        <span>Already have an account? </span>
+        <a href="/login">Login</a>
+      </div>
+
+      {/* Popup Modal */}
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>{signupStatus}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="dark" onClick={handleCloseModal}>
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

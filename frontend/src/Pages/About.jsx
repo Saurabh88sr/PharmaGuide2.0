@@ -1,65 +1,26 @@
-import React, { useState } from "react";
+import React from 'react';
 
-const News = ({ title, description, Imgurl, newsurl }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [updatedTitle, setUpdatedTitle] = useState(title);
-  const [updatedDescription, setUpdatedDescription] = useState(description);
-
-  const handleEdit = () => {
-    setIsEditing(true);
-  };
-
-  const handleUpdate = () => {
-    // Perform the update operation using updatedTitle and updatedDescription
-    // For example, you can make an API call to update the news item
-    // After the update is successful, you can set isEditing back to false
-    setIsEditing(false);
-  };
-
-  const handleCancel = () => {
-    setIsEditing(false);
-    // Reset the updatedTitle and updatedDescription back to their original values
-    setUpdatedTitle(title);
-    setUpdatedDescription(description);
-  };
-
-  const handleRemove = () => {
-    // Perform the remove operation
-    // For example, you can make an API call to delete the news item
-    // After the removal is successful, you can handle any necessary cleanup
-    console.log("Remove operation");
-  };
-
+const About = () => {
   return (
-    <div className="news-card">
-      {isEditing ? (
-        <div>
-          <input
-            type="text"
-            value={updatedTitle}
-            onChange={(e) => setUpdatedTitle(e.target.value)}
-          />
-          <textarea
-            value={updatedDescription}
-            onChange={(e) => setUpdatedDescription(e.target.value)}
-          ></textarea>
-          <button onClick={handleUpdate}>Update</button>
-          <button onClick={handleCancel}>Cancel</button>
-        </div>
-      ) : (
-        <div>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <img src={Imgurl} alt="News" />
-          <a href={newsurl} target="_blank" rel="noopener noreferrer">
-            Read More
-          </a>
-          <button onClick={handleEdit}>Edit</button>
-          <button onClick={handleRemove}>Remove</button>
-        </div>
-      )}
+    <div className="container">
+      <h1>About PharmaGuide</h1>
+      <p>
+        PharmaGuide is a comprehensive online platform dedicated to providing information about pharmaceutical drugs, their uses, dosages, side effects, and more. Our mission is to empower individuals, healthcare professionals, and researchers with accurate and up-to-date information on medications.
+      </p>
+      <p>
+        At PharmaGuide, we strive to ensure that our content is reliable and trustworthy. We gather data from reputable sources, including drug manufacturers, medical journals, and regulatory authorities, and present it in an accessible and user-friendly format.
+      </p>
+      <p>
+        Our team of medical experts and researchers work diligently to maintain the accuracy and currency of the information on PharmaGuide. However, it's important to note that the content provided on this platform is for informational purposes only and should not replace professional medical advice or diagnosis.
+      </p>
+      <p>
+        We welcome feedback from our users and continuously improve our platform to better serve your needs. If you have any questions, suggestions, or concerns, please don't hesitate to contact us.
+      </p>
+      <p>
+        Thank you for choosing PharmaGuide as your trusted source of medication information.
+      </p>
     </div>
   );
-};
+}
 
-export default News;
+export default About;

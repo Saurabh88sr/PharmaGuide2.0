@@ -15,36 +15,63 @@ app.get('/', (req, res)=>{
 })
 
 // Handle login POST request
-app.post('/signup', (req, res) => {
-  console.log("sucesssully login....");
-  const username = req.body.username;
+app.post("/login", (req, res) => {
+  const username= req.body.username; 
   const password = req.body.password;
+con.query(
+  "SELECT * FROM login WHERE username = ? AND password = ?",
+  [username, password],
+  (err, result) => {
+  if (err) {
+    //console.log(err); 
+    res.send({ err: err });
+  } 
+  else{
+        if (result.length > 0) 
+        {
+          res.send(result);
+        } 
+        else 
+        {
+          res.send({ message: "Wrong username/password combination!" });
+        }
+  }
+  
+  }
+  );
+  });
 
-  // Check if user exists in database
-  const sql = 'SELECT * FROM login WHERE username = ? AND password = ?';
-  con.query(sql, [username, password], (err, result) => {
-    if (err) throw err;
-    if (result.length === 0) {
-      // User not found in database
-      res.status(401).json({ message: 'Invalid email or password' });
-    } else {
-      // User found in database
-      res.status(200).json({ message: 'Login successful' });
+// to handle signup request
+app.post("/register", (req, res) => {
+  const { username, password } = req.body;
+
+  // Check username and password against the database
+  con.query(
+    "INSERT INTO login (username, password) VALUES (?, ?)",
+    [username, password],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+        res.send({ success: false });
+      } else {
+        res.send({ success: true });
+      }
     }
+  );
+});
+
+app.get('/drug', (req, res) => {
+  const keyword = req.query.keyword;
+  const sql = "SELECT * FROM medicines WHERE Generic LIKE ? OR MedicineName LIKE ? OR Drug LIKE ? OR MedicineUses LIKE ?";
+  const values = Array(4).fill(`%${keyword}%`);
+  con.query(sql, values, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
   });
 });
 
-app.get('/drug', (req, res)=>{
-  const keyword = req.query.keyword;
-  const sql = "SELECT * FROM medicine WHERE Id LIKE ? OR Medicine LIKE ? OR Generic LIKE ? OR Brand LIKE ? OR Manufacturer LIKE ? OR Diagnosis LIKE ?";
-  const values = Array(6).fill(`%${keyword}%`);
-  con.query(sql, values, (err, data)=>{
-    if(err) return res.json(err);
-    return res.json(data);
-  })
-})
 
 // start the server
-app.listen(7000, ()=>{
+app.listen(3000, ()=>{
   console.log("Server listening on port 7000");
 });

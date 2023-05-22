@@ -149,3 +149,14 @@
   top: 20px;
   background-color: #44685b;
 }
+
+.your-class-name .svg-color {
+  fill: rgb(13, 53, 102);
+}
+
+.your-class-name .svg-color:hover {
+  fill: red; /* Update the color to the desired hover effect */
+}
+.your-class-name:hover {
+  fill: red; /* Update the color to the desired hover effect */
+}
