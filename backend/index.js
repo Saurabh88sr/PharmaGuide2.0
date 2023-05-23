@@ -72,6 +72,6 @@ app.get('/drug', (req, res) => {
 
 
 // start the server
-app.listen(3000, ()=>{
+app.listen(7000, ()=>{
   console.log("Server listening on port 7000");
 });

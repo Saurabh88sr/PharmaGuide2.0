@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About = () => {
+const About  = () => {
   return (
-    <div className="container">
+    <div className="container my-2">
       <h1>About PharmaGuide</h1>
       <p>
         PharmaGuide is a comprehensive online platform dedicated to providing information about pharmaceutical drugs, their uses, dosages, side effects, and more. Our mission is to empower individuals, healthcare professionals, and researchers with accurate and up-to-date information on medications.
