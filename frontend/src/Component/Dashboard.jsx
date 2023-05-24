@@ -21,7 +21,14 @@ const Dashboard = (props) => {
       <div className="board">
         <div className="board-row">
           <a className="nav-link" href="/MedicineCompare">
-            <Card feature="Medicine Compare" src={Compare} alt="My Image" />
+            <Card
+              feature="Medicine Compare"
+              src={Compare}
+              alt="My Image"
+              description="Search your Mecidine, Provide alternate Medicine
+              Display Parallel information 
+              "
+            />
           </a>
           <a className="nav-link" href="/Drugsearch">
             <Card
@@ -29,6 +36,7 @@ const Dashboard = (props) => {
               imageSrc="img\syringe.png"
               src={Condition}
               alt="My Image"
+              description="Find the Medicine for your health condition"
             />
           </a>
         </div>
@@ -39,6 +47,7 @@ const Dashboard = (props) => {
               imageSrc="img\syringe.png"
               src={pill}
               alt="My Image"
+              description="Identify your Medicine by Shape, Color and Imprint Number"
             />
           </a>
           <a className="nav-link" href="/FAQ">
@@ -47,12 +56,20 @@ const Dashboard = (props) => {
               imageSrc="img\syringe.png"
               src={Feedback}
               alt="My Image"
+              description="Ask the Question for the Experts advise"
             />
           </a>
         </div>
         <div className="board-row">
           <a className="nav-link" href={isLoggedIn ? "/MyList" : "/Login"}>
-            <Card feature="My Medicine List" src={List} alt="My Image" />
+            <Card
+              feature="My List"
+              src={List}
+              alt="My Image"
+              description="See Saved List of Medicine
+              Saved List of Medical News
+              "
+            />
           </a>{" "}
           <a className="nav-link" href="/MainNews">
             <Card
@@ -60,6 +77,7 @@ const Dashboard = (props) => {
               imageSrc="img\syringe.png"
               src={News}
               alt="My Image"
+              description="Look at the news of Health Sector"
             />
           </a>
         </div>

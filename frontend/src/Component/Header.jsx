@@ -60,7 +60,7 @@ export default function Header(props) {
             </ul>
             {isLoggedIn ? (
               <div className="nav-item d-flex">
-                <div className=" btn btn-warning">{username.slice(0, 10)}</div>
+                <a href="/MyList"><div className=" btn btn-warning">{username.slice(0, 10)}</div></a>
                 <button className="btn btn-outline btn-sm text-white" onClick={logout}>
                   Logout
                 </button>
