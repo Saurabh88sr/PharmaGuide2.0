@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
-const Login = () => {
-  // for login page
+const Login = ({ handleLogin }) => {
+  const navigate = useNavigate(); // Access the navigate function
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
 
-  // function for login
   const login = (e) => {
-    e.preventDefault(); // Prevent the form from submitting
+    e.preventDefault();
 
     Axios.post('http://localhost:7000/login', {
       username: username,
@@ -20,6 +21,8 @@ const Login = () => {
           setLoginStatus(response.data.message);
         } else {
           setLoginStatus(response.data[0].username);
+          handleLogin(response.data[0]); // Call the handleLogin function with user data
+          navigate('/'); // Redirect to the home page after successful login
         }
       })
       .catch((error) => {
@@ -76,7 +79,6 @@ const Login = () => {
         </div>
 
         <h2>{loginStatus}</h2>
-        
       </div>
     </div>
   );
