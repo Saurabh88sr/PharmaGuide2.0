@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, Button, ListGroup } from "react-bootstrap";
 import MostAsked from "./MostAsked";
 // import NewQuestion from "./NewQuetion";
 
-function FQA() {
+function FQA({isLoggedIn}) {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -81,7 +81,7 @@ function FQA() {
     <div className="card-icon card-box fixed-bottom">
     
     <h5>Did not find what you were looking for? <button type="text" className="btn">
-    <a href="/QuestionForm" > Ask a Question</a></button> </h5>
+    <a href={isLoggedIn ? "/QuestionForm" : "/Login"} > Ask a Question</a></button> </h5>
     
   </div>
   </>

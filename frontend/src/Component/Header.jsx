@@ -28,7 +28,7 @@ export default function Header(props) {
                   Home
                 </a>
               </li>
-              {!isLoggedIn && (
+              {isLoggedIn && (
                 <>
                   <li className="nav-item">
                     <a className="nav-link text-white" href="/MedicineCompare">
