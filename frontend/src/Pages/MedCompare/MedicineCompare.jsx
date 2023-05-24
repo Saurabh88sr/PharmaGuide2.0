@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
 import DrugTable from "../Identifier/DrugTable";
 import medicineData from "../medicineData.json";
 import MedCardInfo from "./MedCardInfo";
-import Medlist from "../MyList/Medlist";
-import SavedMedicineList from "./SavedMedicineList";
 
-const savedMedicineKey = "savedMedicine";
+
 
 function MedicineCompare() {
   const [data, setData] = useState([]);
@@ -15,16 +13,10 @@ function MedicineCompare() {
   const [drugName, setDrugName] = useState("");
   const [genrName, setGenrName] = useState("");
   const [matchedMedicines, setMatchedMedicines] = useState([]);
-  const [medicineItems, setMedicineItems] = useState([]);
-  const [savedMedicines, setSavedMedicines] = useState([]);
   const [messages, setMessages] = useState([]);
   // const [showRules, setShowRules] = useState(false);
 
-  useEffect(() => {
-    const savedMedicineData = getSavedMedicine();
-    setMedicineItems(savedMedicineData);
-    setSavedMedicines(savedMedicineData.filter((item) => item.isSaved));
-  }, []);
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -91,35 +83,6 @@ function MedicineCompare() {
     }
   };
   
-  const handleSave = (medicine) => {
-    const updatedMedicineItems = medicineItems.map((item) => {
-      if (item.id === medicine.id) {
-        return {
-          ...item,
-          isSaved: !item.isSaved,
-        };
-      }
-      return item;
-    });
-
-    setMedicineItems(updatedMedicineItems);
-    setSavedMedicines(updatedMedicineItems.filter((item) => item.isSaved));
-    saveMedicineData(updatedMedicineItems);
-  };
-
-  const saveMedicineData = (medicineData) => {
-    localStorage.setItem(savedMedicineKey, JSON.stringify(medicineData));
-  };
-
-  const getSavedMedicine = () => {
-    const savedMedicineData = localStorage.getItem(savedMedicineKey);
-    if (savedMedicineData) {
-      return JSON.parse(savedMedicineData);
-    }
-    return [];
-  };
-  
-
   return (
     <div>
       <div className="container justify-content-md-center  ">
@@ -159,7 +122,7 @@ function MedicineCompare() {
         </ul>
         <div className="justify-content-md-center d-flex ">
           {data.map((item, index) => (
-            <div key={index} className=" d-flex w-50">
+            <div key={index} className=" d-flex ">
               {/* <GenericTable /> */}
               <DrugTable
                 name={item.name}
@@ -180,7 +143,7 @@ function MedicineCompare() {
           {
             // showRules &&
             genrData.map((item, index) => (
-              <div key={index} className=" d-flex">
+              <div key={index} className=" d-flex w-75">
                 <DrugTable
                   name={item.name}
                   genrName={item.generic_name}
@@ -198,13 +161,11 @@ function MedicineCompare() {
               </div>
             ))
           }
-        </div>
-      </div>
-      <div className="container my-4">
-        <h1 className="headBg">Top Alternative</h1>
+          <div className="container ">
+        <h1 className="headBg">{setDrugName}Top Alternative</h1>
         <div className="row">
           {matchedMedicines.map((medicine) => (
-            <div className="col-md-4 p-2">
+            <div className="col-md-6 p-2">
               <MedCardInfo
               id={medicine.id}
                 name={medicine.name}
@@ -217,9 +178,10 @@ function MedicineCompare() {
             </div>
           ))}
         </div>
-        <Medlist medicineItems={medicineItems} handleSave={handleSave} />
-      <SavedMedicineList savedMedicines={savedMedicines} />
       </div>
+        </div>
+      </div>
+      
     </div>
   );
 }
